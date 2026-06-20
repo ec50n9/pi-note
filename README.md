@@ -2,6 +2,14 @@
 
 给 pi 增加 `/note` 命令，用来在开发过程中临时记录想法，而不是把它们排进当前对话队列。
 
+## 安装
+
+```bash
+pi install git:github.com/ec50n9/pi-note@v1.0.0
+```
+
+安装后 pi 会自动加载。如果 pi 已在运行，执行 `/reload`。
+
 ## 使用场景
 
 当 pi 正在执行任务时，你可能突然想到一个后续优化点：
@@ -60,14 +68,6 @@ notes 保存在 Pi 的用户级 agent 配置目录：
 - `sentAt`：可选，note 被 `/note` 或 `/note edit` 消耗的时间
 
 这个文件只用于本地暂存，不会自动进入 LLM 上下文。
-
-## 安装
-
-```bash
-pi install git:github.com/ec50n9/pi-note@v1.0.0
-```
-
-安装后 pi 会自动加载。如果 pi 已在运行，执行 `/reload`。
 
 > 维护者请参见 [RELEASING.md](RELEASING.md) 了解发布和更新流程。
 
