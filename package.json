@@ -1,0 +1,17 @@
+{
+  "name": "pi-note",
+  "version": "1.0.0",
+  "description": "给 pi 增加 /note 命令，在开发过程中临时记录想法而不打断当前对话",
+  "keywords": ["pi-package"],
+  "license": "MIT",
+  "pi": {
+    "extensions": ["./index.ts"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ec50n9/pi-note"
+  }
+}
