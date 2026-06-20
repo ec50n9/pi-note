@@ -61,21 +61,47 @@ notes 保存在 Pi 的用户级 agent 配置目录：
 
 这个文件只用于本地暂存，不会自动进入 LLM 上下文。
 
-## 安装位置
+## 安装
 
-当前插件放在 pi 的全局扩展目录：
-
-```text
-~/.pi/agent/extensions/note/index.ts
+```bash
+pi install git:github.com/ec50n9/pi-note@v1.0.0
 ```
 
-如果 pi 已经在运行，执行：
+安装后 pi 会自动加载。如果 pi 已在运行，执行 `/reload`。
 
-```text
-/reload
+## 发布与更新（维护者）
+
+### 首次发布
+
+```bash
+cd ~/.pi/agent/extensions/note
+git init
+git add .
+git commit -m "Initial commit: pi note extension v1.0.0"
+git tag v1.0.0
+git branch -m master main
+gh repo create pi-note --public --description "pi 扩展：/note 命令，在开发过程中临时记录想法而不打断当前对话" --source=. --remote=origin --push
 ```
 
-重新加载扩展后即可使用 `/note`。
+### 后续更新
+
+```bash
+cd ~/.pi/agent/extensions/note
+
+# 修改代码后...
+git add -A
+git commit -m "描述本次改动"
+
+# 打新版本 tag（按语义化版本递增）
+git tag v1.0.1
+git push origin main --tags
+```
+
+### 用户更新到新版本
+
+```bash
+pi install git:github.com/ec50n9/pi-note@v1.0.1
+```
 
 ## 设计说明
 
